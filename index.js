@@ -227,13 +227,6 @@ class Client {
 const wss = new WebSocket.Server({ port: 8081 });
 var clients = [];
 
-// for (let i = 0; i < 400; i++) {
-//     let c = new Client();
-
-//     c.connect("ws://37.187.76.129:11027");
-//     clients.push(c);
-// }
-
 wss.on('connection', function connection(ws) {
 	ws.on('message', function incoming(message) {
 		let opcode = message.readUInt8(0);
